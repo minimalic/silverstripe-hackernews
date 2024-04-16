@@ -1,8 +1,9 @@
 # Silverstripe HackerNews - slider with Y Combinator's Hacker News
 
-Silverstripe HackerNews is a news ticker (animated banner) with tech news fetched by using Hacker News API.
+News ticker (animated banner) for Silverstripe CMS.
+The extension can automatically fetch tech news/posts by using Hacker News API.
 
-Working demo on on [iloveunix.com](https://iloveunix.com) at site's bottom.
+Working demo on [iloveunix.com](https://iloveunix.com) at site's footer.
 
 ## Requirements
 
