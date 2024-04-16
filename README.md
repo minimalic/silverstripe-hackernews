@@ -7,7 +7,7 @@ Working demo on on [iloveunix.com](https://iloveunix.com) at site's bottom.
 ## Requirements
 
 * Compatible with Silverstripe versions 4 and 5
-* Optionally Bootstrap
+* Bootstrap (optional, e.g. [silverstripe-bootloader](https://github.com/minimalic/silverstripe-bootloader))
 
 
 ## Installation
@@ -22,7 +22,7 @@ composer require minimalic/silverstripe-hackernews
 
 ### Rebuild DB
 
-Rebuild DB with your URL and `dev/build?flush=all` or shell:
+Rebuild DB by appending `dev/build?flush=all` to your website's URL or by using shell:
 
 ```sh
 vendor/bin/sake dev/build "flush=all"
@@ -31,18 +31,22 @@ vendor/bin/sake dev/build "flush=all"
 
 ### Fetch Hacker News
 
-Fetch first news with your URL and `dev/tasks/FetchHackerNewsTask` or shell:
+Fetch first news by appending `dev/tasks/FetchHackerNewsTask` to your website's URL or by using shell:
+
 ```sh
 vendor/bin/sake dev/tasks/FetchHackerNewsTask
 ```
 
 
-### optional Bootstrap extension
+### Bootstrap extension (optional)
 
-Install using Composer:
+Bootstrap (CSS library) isn't required, but this extension is using Bootstrap's markups for templating.
+Own Bootstrap implementation can be used as well as extensions like `silverstripe-bootloader`:
+
 ```sh
 composer require minimalic/silverstripe-bootloader
 ```
+
 
 ## Usage
 
@@ -51,16 +55,13 @@ Simply put `$HackerNews` inside your template, for example `Footer.ss`:
 ```html
 <div class="container-fluid g-0 f-hacker-news">
     $HackerNews
-    <div class="m-2 text-end text-black-50 f-hacker-news-contribution">
-        Hacker News by <a href="https://news.ycombinator.com/news" class="text-reset">Y Combinator</a>
-    </div>
 </div>
 ```
 
 
 ## Configuration
 
-Website's configuration YAML (e.g. `app/_config/hackernews.yml`):
+Configuration YAML (e.g. `app/_config/hackernews.yml`):
 
 ```yaml
 minimalic\HackerNews\Tasks\FetchHackerNewsTask:
@@ -75,23 +76,24 @@ minimalic\HackerNews\Tasks\FetchHackerNewsTask:
 
 ## Automatic daily news fetch
 
-Set up cronjob (shell):
+Set up cronjob (shell, as web user):
 
 ```sh
 crontab -e
 ```
 
-For news fetch every 6 hours starting at 0:42 local server time type in:
+To fetch news every 6 hours starting at 0:42 local server time type in:
 
 ```cron
-42 */6 * * * ~/websitepath/vendor/bin/sake dev/tasks/FetchHackerNewsTask
+42 */6 * * * ~/mywebsite/vendor/bin/sake dev/tasks/FetchHackerNewsTask
 ```
 
-(the `~/websitepath/` is a relative path from your web user starting point - you can also use an absolute path like `/var/www/mywebsite/`)
+(the `~/mywebsite/` is a relative path from your web user starting point - you can also use an absolute path like `/var/www/mywebsite/`)
+
 
 ## Contribution
 
-Compile SCSS to CSS (developing only, shell):
+To compile SCSS to CSS install `sass`, `nodemon` and `postcss` by using `npm` and run (developing only, shell):
 
 ```sh
 cd vendor/minimalic/silverstripe-hackernews/client/src/
