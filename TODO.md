@@ -1,7 +1,6 @@
-Copyright (c) 2024, minimalic.com - Sebastian Finke
-All rights reserved.
+# ToDo's
 
-- make terminal output nice
+
 - news as buttons
-- accessibility controls
+- accessibility controls (pause button)
 - no-javascript fallback
