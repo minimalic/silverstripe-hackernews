@@ -1,6 +1,6 @@
 {
     "name": "minimalic/silverstripe-hackernews",
-    "description": "Fetch Hecker News by YCombinator for SilverStripe",
+    "description": "Silverstripe CMS module for Tech news fetched by using Hacker News API",
     "type": "silverstripe-vendormodule",
     "keywords": [
         "silverstripe",
