@@ -1,0 +1,6 @@
+---
+name: hackernewsconfig
+---
+SilverStripe\CMS\Controllers\ContentController:
+  extensions:
+    - minimalic\HackerNews\Extensions\HackerNewsBannerExtension

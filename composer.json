@@ -1,0 +1,32 @@
+{
+    "name": "minimalic/silverstripe-hackernews",
+    "description": "Fetch Hecker News by YCombinator for SilverStripe",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "news",
+        "hackernews",
+        "hacker-news"
+    ],
+    "authors": [
+        {
+            "name": "Sebastian Finke", "email": "dev@minimalic.com"
+        }
+    ],
+    "require": {
+        "silverstripe/cms": "^4 || ^5"
+    },
+    "autoload": {
+        "psr-4": {
+            "minimalic\\HackerNews\\": "src/"
+        }
+    },
+    "extra": {
+        "expose": [
+            "client/dist"
+        ]
+    },
+    "license": "BSD-3-Clause",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

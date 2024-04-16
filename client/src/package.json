@@ -1,0 +1,11 @@
+{
+  "name": "hackernewsstyle",
+  "sass": "scss/hackernews.scss",
+  "style": "../dist/css/hackernews.css",
+  "scripts": {
+    "watch": "nodemon --exec \"npm-run-all sass-once css-prefix\"",
+    "sass-once": "sass scss/hackernews.scss ../dist/css/hackernews.css",
+    "sass-watch": "sass --watch scss/hackernews.scss ../dist/css/hackernews.css",
+    "css-prefix": "postcss --use autoprefixer --replace \"../dist/css/*.css\""
+  }
+}

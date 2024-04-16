@@ -1,0 +1,31 @@
+.news-ticker {
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+}
+
+.ticker-wrap {
+    display: inline-flex;
+}
+
+.ticker-item {
+    display: inline-block;
+    will-change: transform; // fix jittery characters on slow speeds
+    a.nav-link {
+        margin-right: -1px;
+        background-color: black;
+        color: white;
+        font-size: 1.25rem;
+        font-weight: 600;
+        &:hover,
+        &:focus {
+            // background-color: ;
+        }
+    }
+    a.ticker-item-link-black { background-color: hsl(0, 0%, 10%); }
+    a.ticker-item-link-blue { background-color: steelblue; }
+    a.ticker-item-link-green { background-color: limegreen; }
+    a.ticker-item-link-pink { background-color: darkviolet; }
+    a.ticker-item-link-yellow { background-color: orange; }
+    // white-space: normal; // causing new lines on smaller views
+}
