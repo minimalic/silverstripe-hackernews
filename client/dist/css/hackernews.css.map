@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../src/scss/hackernews.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;AACA;EACI;EACA;EACA;EACA;EACA;;AAMJ;EAA2B;;AAC3B;EAA0B;;AAC1B;EAA2B;;AAC3B;EAA0B;;AAC1B;EAA4B","file":"hackernews.css"}
+{"version":3,"sourceRoot":"","sources":["../../src/scss/hackernews.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;AACA;EACI;EACA;EACA;EACA;EACA","file":"hackernews.css"}
