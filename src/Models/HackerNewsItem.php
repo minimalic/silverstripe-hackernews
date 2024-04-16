@@ -43,17 +43,4 @@ class HackerNewsItem extends DataObject
         return $hoverColor;
     }
 
-    // public function getColor() {
-    //     $colors = [
-    //         'black',
-    //         'blue',
-    //         'green',
-    //         'pink',
-    //         'yellow',
-    //     ];
-    //     shuffle($colors);
-    //     $color = $colors[0];
-    //     return $color;
-    // }
-
 }
