@@ -2,12 +2,17 @@
 document.addEventListener("DOMContentLoaded", function() {
     const newsTicker = document.getElementById('newsTicker'); // root container
     const tickerWrap = newsTicker.querySelector('.ticker-wrap'); // holder for ticker items
-    const scrollSpeed = 70; // pixels per second
+    const customScrollSpeed = newsTicker.getAttribute('data-hackernews-scrollspeed'); // custom scroll speed set by yaml config
 
+    let scrollSpeed = 60; // pixels per second
     let isPaused = false; // pausing on events
     let currentTranslateX = 0; // animation (for each item)
     let lastTimestamp = 0; // used for main scrolling animation
     let cloneCounter = 0; // used for unique IDs while cloning
+
+    if (customScrollSpeed) {
+        scrollSpeed = customScrollSpeed;
+    }
 
     // get width of the browser
     function getTotalWidth(excludeFirstItem = false) {

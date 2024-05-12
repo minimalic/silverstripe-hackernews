@@ -15,8 +15,7 @@
 <% end_loop %>
 </style>
 
-
-<div id="newsTicker" class="news-ticker">
+<div id="newsTicker" class="news-ticker" data-hackernews-scrollspeed="{$HackerNewsBannerSpeed}">
     <div class="ticker-wrap">
         <% loop $HackerNewsItems.limit(50) %>
         <div id="tickerItem{$ID}" class="ticker-item ticker-item-{$ID}">
