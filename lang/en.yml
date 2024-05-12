@@ -1,0 +1,12 @@
+en:
+  minimalic\HackerNews\Models\HackerNewsItem:
+    PLURALNAME: 'Hacker News Items'
+    PLURALS:
+      one: 'A Hacker News Item'
+      other: '{count} Hacker News Items'
+    SINGULARNAME: 'Hacker News Item'
+    db_Color: Color
+    db_OriginID: 'Origin ID'
+    db_PostDatetime: 'Post datetime'
+    db_Title: Title
+    db_Url: Url
