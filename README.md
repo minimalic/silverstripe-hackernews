@@ -72,6 +72,9 @@ minimalic\HackerNews\Tasks\FetchHackerNewsTask:
     server@domain.com: 'Server Name'
   email_message_to:
     my.mail@domain.com: 'My Name'
+
+minimalic\HackerNews\HackerNewsBanner:
+  banner_speed: 60
 ```
 
 
