@@ -37,6 +37,9 @@ class FetchHackerNewsTask extends BuildTask {
 
     private static $email_message_enable = false;
 
+    // sent the email only at night hours (between 12 pm and 6 am, server time)
+    private static $email_message_nightly = false;
+
     private static $email_message_from;
 
     private static $email_message_to;
@@ -132,8 +135,18 @@ class FetchHackerNewsTask extends BuildTask {
         $fetchLog .= "Stories array fetched...<br><br>";
         $logger->output("Stories array fetched...", "SUCCESS", Logger::GREEN);
 
+        // check for night hour
+        $allowEmail = true;
+        $currentHour = intval(date('H'));
+        if ($this->config()->get('email_message_nightly') && $currentHour < 0 && $currentHour > 5) {
+            $allowEmail = false;
+
+            $fetchLog .= "Skipping email - only allowed at night time.<br>";
+            $logger->info("Skipping email - only allowed at night time.");
+        }
+
         // send email with fetched stories
-        if ($this->config()->get('email_message_enable') && $this->config()->get('email_message_to') != '') {
+        if ($allowEmail && $this->config()->get('email_message_enable') && $this->config()->get('email_message_to') != '') {
             $logger->output("Trying to compose an email...");
 
             $emailFrom = $this->config()->get('email_message_from');
@@ -147,7 +160,7 @@ class FetchHackerNewsTask extends BuildTask {
             }
 
             $emailSubject = 'Fetch Hacker News';
-            $emailBody = "news fetch cron done:<br><br>" . $fetchLog . "<br>";
+            $emailBody = "News fetch done:<br><br>" . $fetchLog . "<br>";
 
             if ($emailFrom && $emailFrom != '' && $emailTo && $emailSubject && $emailBody) {
                 $logger->output("Trying to send an email...");
