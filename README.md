@@ -62,12 +62,13 @@ Simply put `$HackerNews` inside your template, for example `Footer.ss`:
 
 ## Configuration
 
-Configuration YAML (e.g. `app/_config/hackernews.yml`):
+Configuration options (e.g. `app/_config/hackernews.yml`):
 
 ```yaml
 minimalic\HackerNews\Tasks\FetchHackerNewsTask:
   posts_to_load: 40
   email_message_enable: true
+  email_message_nightly: true
   email_message_from:
     server@domain.com: 'Server Name'
   email_message_to:
