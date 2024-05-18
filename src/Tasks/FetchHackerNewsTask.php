@@ -138,11 +138,14 @@ class FetchHackerNewsTask extends BuildTask {
         // check for night hour
         $allowEmail = true;
         $currentHour = intval(date('H'));
-        if ($this->config()->get('email_message_nightly') && $currentHour < 0 && $currentHour > 5) {
-            $allowEmail = false;
 
-            $fetchLog .= "Skipping email - only allowed at night time.<br>";
-            $logger->info("Skipping email - only allowed at night time.");
+        if ($this->config()->get('email_message_nightly')) {
+            if ($currentHour < 0 || $currentHour > 5) {
+                $allowEmail = false;
+
+                $fetchLog .= "Skipping email - only allowed at night time.<br>";
+                $logger->info("Skipping email - only allowed at night time.");
+            }
         }
 
         // send email with fetched stories
