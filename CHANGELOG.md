@@ -1,6 +1,12 @@
 # Change Log
 
 
+## [1.0.3](https://github.com/minimalic/silverstripe-hackernews/releases/tag/1.0.3) (2024-05-18)
+
+### Fixes/Features:
+* Fix the `email_message_nightly` setting
+
+
 ## [1.0.2](https://github.com/minimalic/silverstripe-hackernews/releases/tag/1.0.2) (2024-05-17)
 
 ### Fixes/Features:
