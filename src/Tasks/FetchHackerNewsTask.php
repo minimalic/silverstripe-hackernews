@@ -37,7 +37,7 @@ class FetchHackerNewsTask extends BuildTask {
 
     private static $email_message_enable = false;
 
-    // sent the email only at night hours (between 12 pm and 6 am, server time)
+    // send the email only at night hours (between 12 pm and 6 am, server time)
     private static $email_message_nightly = false;
 
     private static $email_message_from;
