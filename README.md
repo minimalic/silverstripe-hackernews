@@ -32,10 +32,16 @@ vendor/bin/sake dev/build "flush=all"
 
 ### Fetch Hacker News
 
-Fetch first news by appending `dev/tasks/FetchHackerNewsTask` to your website's URL or by using shell:
+Fetch first news by appending `dev/tasks/FetchHackerNewsTask` to your website's URL or by using shell (from website's root directory):
 
 ```sh
 vendor/bin/sake dev/tasks/FetchHackerNewsTask
+```
+
+or (if sake is not available):
+
+```sh
+php vendor/silverstripe/framework/cli-script.php dev/tasks/FetchHackerNewsTask
 ```
 
 
