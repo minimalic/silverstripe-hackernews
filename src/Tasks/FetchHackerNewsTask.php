@@ -58,7 +58,7 @@ class FetchHackerNewsTask extends BuildTask {
         $mostRecentItem = HackerNewsItem::get()->sort('Created', 'DESC')->first();
         // if ($mostRecentItem && strtotime($mostRecentItem->Created) > strtotime('-6 hours')) {
         if ($mostRecentItem && strtotime($mostRecentItem->Created) > strtotime('-' . $repeatTime . ' minutes')) {
-            $logger->info("It's been less than {$repeatTime} minutes since the last fetch at {$mostRecentItem->Created}. Exiting to avoid too many requests.\n");
+            $logger->info("It has been less than {$repeatTime} minutes since the last fetch at {$mostRecentItem->Created}. Exiting to avoid too many requests.\n");
             return;
         }
 
@@ -173,6 +173,8 @@ class FetchHackerNewsTask extends BuildTask {
                 $email->send();
             }
         }
+
+        $logger->output("Task done.\n");
     }
 
     // generate HSL colors for known brands
