@@ -137,9 +137,10 @@ class FetchHackerNewsTask extends BuildTask {
 
         // check for night hour
         $allowEmail = true;
-        $currentHour = intval(date('H'));
 
         if ($this->config()->get('email_message_nightly')) {
+            $currentHour = intval(date('H'));
+
             if ($currentHour < 0 || $currentHour > 5) {
                 $allowEmail = false;
 
